@@ -30,3 +30,31 @@ function displayWorks(projets) {
     
     }
 }
+
+
+const buttons = document.querySelectorAll(".filtersButton")
+const filters = (event) => {
+  const text = event.target.value
+  console.log(text) 
+  fetch('http://localhost:5678/api/works', {
+    body: text, 
+    method: "POST"
+  }) 
+  .then(response => response.json())
+  .then(data => {
+    projets = data
+    // Do something with the array of works
+    displayWorks(projets)
+  })
+  .catch(error => {
+    // Handle any errors
+    console.error(error);
+  });
+
+
+}
+buttons.forEach(button =>{
+  button.addEventListener("click", filters)
+})
+
+
