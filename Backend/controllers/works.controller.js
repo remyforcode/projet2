@@ -1,8 +1,7 @@
 const db = require('./../models');
 const Works = db.works
 
-exports.filters = async (req, res) =>  {
-	console.log(req.body)
+exports.findAll = async (req, res) =>  {
 	const works = await Works.findAll({include: 'category'});
 	return res.status(200).json(works);
 }

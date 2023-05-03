@@ -1,4 +1,5 @@
 let projets
+let projetsFiltered = []
 
 fetch('http://localhost:5678/api/works')
   .then(response => response.json())
@@ -14,7 +15,9 @@ fetch('http://localhost:5678/api/works')
 
 
 function displayWorks(projets) {
+  console.log(projets)
   const gallery = document.querySelector(".gallery")
+  gallery.innerHTML = '';
     for (let projet of projets) {
 
         const figure = document.createElement("figure");
@@ -33,26 +36,19 @@ function displayWorks(projets) {
 
 
 const buttons = document.querySelectorAll(".filtersButton")
+
 const filters = (event) => {
-  const text = event.target.value
-  console.log(text) 
-  fetch('http://localhost:5678/api/works', {
-    body: text, 
-    method: "POST"
-  }) 
-  .then(response => response.json())
-  .then(data => {
-    projets = data
-    // Do something with the array of works
-    displayWorks(projets)
-  })
-  .catch(error => {
-    // Handle any errors
-    console.error(error);
-  });
+  
+  if (event.target.value === "Tous") {
+     displayWorks(projets)
+  } else {
+    projetsFiltered = projets.filter(projet => projet.category.name === event.target.value)
+    displayWorks(projetsFiltered)
+    
+  }
 
+ }
 
-}
 buttons.forEach(button =>{
   button.addEventListener("click", filters)
 })
