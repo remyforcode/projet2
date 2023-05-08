@@ -40,7 +40,7 @@ const buttons = document.querySelectorAll(".filtersButton")
 const filters = (event) => {
   
   if (event.target.value === "Tous") {
-     displayWorks(projets)
+    displayWorks(projets)
   } else {
     projetsFiltered = projets.filter(projet => projet.category.name === event.target.value)
     displayWorks(projetsFiltered)

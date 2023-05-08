@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Connexion</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Work+Sans&display=swap" rel="stylesheet">
+  <meta name="description" content="">
   <link rel="stylesheet" href="/FrontEnd/assets/login.css">
 </head>
 <body>
@@ -20,14 +22,28 @@
             </ul>
         </nav>
     </header>
-    <form id="connexion-form">
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
-    <br>
-    <label for="password">Mot de passe:</label>
-    <input type="password" id="password" name="password" required>
-    <br>
-    <button type="submit">Connexion</button>
-  </form>
+    <main>
+     <div class="center">
+      <form id="connexion-form">
+      <h3>Log In</h3> 
+      
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="password">Mot de passe</label>
+      <input type="password" id="password" name="password" required>
+      
+     
+     <input value="Se connecter" type="submit" class="connecter"></input>
+     
+     <a class="password-forget">Mot de passe oublié</a>
+     </form>
+    </div>
+    </main>
 </body>
+  <footer>
+	  <ul>
+			<li>Mentions Légales</li>
+		 </ul>
+	</footer>
 </html>
