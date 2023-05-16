@@ -54,3 +54,9 @@ buttons.forEach(button =>{
 })
 
 
+// Récupérer le token de l'URL
+const urlParams = new URLSearchParams(window.location.search);
+const token = urlParams.get("token");
+
+
+
