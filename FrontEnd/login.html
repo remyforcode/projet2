@@ -1,51 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Connexion</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Work+Sans&display=swap" rel="stylesheet">
-  <meta name="description" content="">
-  <link rel="stylesheet" href="/FrontEnd/assets/login.css">
+    <meta charset="UTF-8">
+    <title>Sophie Bluel - Architecte d'intérieur</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
+        rel="stylesheet">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="./assets/login.js" type="module"></script>
 </head>
+
 <body>
-    <header>
-        <h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
-        <nav>
-            <ul>
-                <li>projets</li>
-                <li>contact</li>
-                <li><a href="/FrontEnd/login.html">login</a></li>
-                <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-     <div class="center">
-      <form id="connexion-form">
-      <h3>Log In</h3> 
-      
-      <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" required>
-      
-      <label for="password">Mot de passe</label>
-      <input type="password" id="password" name="password" required>
-      
-     
-     <input value="Se connecter" type="submit" class="connecter"></input>
-     
-     <a class="password-forget">Mot de passe oublié</a>
-     </form>
-     <p id="message"></p>
+    <div id="app">
+        <header>
+            <h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+            <nav>
+                <ul>
+                    <li>projets</li>
+                    <li>contact</li>
+                    <li><a id="authLink" href="login.html">login</a></li>
+                    <li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="authentication">
+                <form method="POST" class="login-form">
+                    <h2 class="form-title">Log In</h2>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="email" id="email" required value="sophie.bluel@test.tld">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" name="password" id="password" required value="S0phie">
+                    </div>
+    
+                    <button id="loginSubmit" type="submit">Se connecter</button>
+                    <span class="errors"></span>
+                    <a href="#">Mot de passe oublié</a>
+                </form>
+            </section>
+        </main>
     </div>
-    </main>
 </body>
-  <footer>
-	  <ul>
-			<li>Mentions Légales</li>
-		 </ul>
-	</footer>
-    <script src="login.js"></script>
 </html>
